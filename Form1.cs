@@ -102,5 +102,22 @@ namespace simulacroparcial1by
                 listBoxReporte.Items.Add(est.Nombre + " - " + tal.Nombre);
             }
         }
+
+        private void btnOrdenar_Click(object sender, EventArgs e)
+        {
+            listBoxReporte.Items.Clear();
+
+            var ordenado = inscripciones
+                .OrderBy(i => talleres.Find(t => t.Codigo == i.CodigoTaller).Nombre)
+                .ToList();
+
+            foreach (var ins in ordenado)
+            {
+                var est = estudiantes.Find(x => x.DPI == ins.DPI);
+                var tal = talleres.Find(x => x.Codigo == ins.CodigoTaller);
+
+                listBoxReporte.Items.Add(est.Nombre + " - " + tal.Nombre);
+            }
+        }
     }
 }

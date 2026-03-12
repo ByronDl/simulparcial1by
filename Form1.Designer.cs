@@ -101,6 +101,7 @@
             this.btnOrdenar.TabIndex = 6;
             this.btnOrdenar.Text = "Ordenar por taller";
             this.btnOrdenar.UseVisualStyleBackColor = true;
+            this.btnOrdenar.Click += new System.EventHandler(this.btnOrdenar_Click);
             // 
             // btnTotal
             // 
