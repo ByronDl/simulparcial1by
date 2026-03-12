@@ -87,10 +87,11 @@
             // 
             this.btnReporte.Location = new System.Drawing.Point(56, 235);
             this.btnReporte.Name = "btnReporte";
-            this.btnReporte.Size = new System.Drawing.Size(75, 22);
+            this.btnReporte.Size = new System.Drawing.Size(130, 22);
             this.btnReporte.TabIndex = 5;
             this.btnReporte.Text = "Mostrar Reporte";
             this.btnReporte.UseVisualStyleBackColor = true;
+            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
             // 
             // btnOrdenar
             // 

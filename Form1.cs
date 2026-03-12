@@ -89,5 +89,18 @@ namespace simulacroparcial1by
 
             MessageBox.Show("Inscripción realizada");
         }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            listBoxReporte.Items.Clear();
+
+            foreach (var ins in inscripciones)
+            {
+                var est = estudiantes.Find(x => x.DPI == ins.DPI);
+                var tal = talleres.Find(x => x.Codigo == ins.CodigoTaller);
+
+                listBoxReporte.Items.Add(est.Nombre + " - " + tal.Nombre);
+            }
+        }
     }
 }
