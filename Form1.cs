@@ -12,6 +12,7 @@ namespace simulacroparcial1by
 {
     public partial class Form1 : Form
     {
+        //primer commit
         List<Estudiante> estudiantes = new List<Estudiante>();
         List<Taller> talleres = new List<Taller>();
         List<Inscripcion> inscripciones = new List<Inscripcion>();
