@@ -20,11 +20,74 @@ namespace simulacroparcial1by
         public Form1()
         {
             InitializeComponent();
+
+            CargarEstudiantes();
+            CargarTalleres();
+            LlenarCombos();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        void CargarEstudiantes()
+        {
+            foreach (var linea in File.ReadAllLines("estudiantes.txt"))
+            {
+                var datos = linea.Split(',');
+
+                estudiantes.Add(new Estudiante
+                {
+                    DPI = datos[0],
+                    Nombre = datos[1],
+                    Direccion = datos[2]
+                });
+            }
+        }
+
+        void CargarTalleres()
+        {
+            foreach (var linea in File.ReadAllLines("talleres.txt"))
+            {
+                var datos = linea.Split(',');
+
+                talleres.Add(new Taller
+                {
+                    Codigo = datos[0],
+                    Nombre = datos[1],
+                    Costo = Convert.ToDouble(datos[2])
+                });
+            }
+        }
+
+        void LlenarCombos()
+        {
+            comboEstudiante.DataSource = estudiantes;
+            comboEstudiante.DisplayMember = "Nombre";
+
+            comboTaller.DataSource = talleres;
+            comboTaller.DisplayMember = "Nombre";
+        }
+
+        private void btnInscribir_Click(object sender, EventArgs e)
+        {
+            Estudiante est = (Estudiante)comboEstudiante.SelectedItem;
+            Taller tal = (Taller)comboTaller.SelectedItem;
+
+            Inscripcion nueva = new Inscripcion
+            {
+                DPI = est.DPI,
+                CodigoTaller = tal.Codigo,
+                Fecha = DateTime.Now
+            };
+
+            inscripciones.Add(nueva);
+
+            File.AppendAllText("inscripciones.txt",
+                nueva.DPI + "," + nueva.CodigoTaller + "," + nueva.Fecha + Environment.NewLine);
+
+            MessageBox.Show("Inscripción realizada");
         }
     }
 }
