@@ -119,5 +119,11 @@ namespace simulacroparcial1by
                 listBoxReporte.Items.Add(est.Nombre + " - " + tal.Nombre);
             }
         }
+
+        private void btnTotal_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Total inscritos: " + inscripciones.Count);
+        }
+    }
     }
 }

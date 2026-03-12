@@ -111,6 +111,7 @@
             this.btnTotal.TabIndex = 7;
             this.btnTotal.Text = "Total inscritos";
             this.btnTotal.UseVisualStyleBackColor = true;
+            this.btnTotal.Click += new System.EventHandler(this.btnTotal_Click);
             // 
             // listBoxReporte
             // 
