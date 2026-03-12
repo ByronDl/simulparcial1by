@@ -117,10 +117,11 @@
             // 
             this.listBoxReporte.FormattingEnabled = true;
             this.listBoxReporte.ItemHeight = 16;
-            this.listBoxReporte.Location = new System.Drawing.Point(319, 154);
+            this.listBoxReporte.Location = new System.Drawing.Point(284, 67);
             this.listBoxReporte.Name = "listBoxReporte";
-            this.listBoxReporte.Size = new System.Drawing.Size(120, 84);
+            this.listBoxReporte.Size = new System.Drawing.Size(483, 292);
             this.listBoxReporte.TabIndex = 8;
+            this.listBoxReporte.SelectedIndexChanged += new System.EventHandler(this.listBoxReporte_SelectedIndexChanged);
             // 
             // Form1
             // 
